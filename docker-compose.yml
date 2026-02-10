@@ -1,0 +1,44 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: shopit-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: shopit_db
+      MYSQL_USER: shopit_user
+      MYSQL_PASSWORD: shopit_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+      - mysql_data:/var/lib/mysql
+    restart: unless-stopped
+
+  backend:
+    build: ./backend
+    container_name: shopit-backend
+    ports:
+      - "4000:4000" 
+    environment:
+      DB_HOST: db
+      DB_USER: shopit_user
+      DB_PASSWORD: shopit_pass
+      DB_NAME: shopit_db
+      JWT_SECRET: supersecret
+    depends_on:
+      - db
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: shopit-frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  mysql_data:

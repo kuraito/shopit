@@ -1,0 +1,18 @@
+# Usa Node come base
+FROM node:20-alpine
+
+# Crea cartella di lavoro
+WORKDIR /app
+
+# Copia package.json e installa dipendenze
+COPY package.json package-lock.json ./
+RUN npm install
+
+# Copia tutto il resto
+COPY . .
+
+# Espone la porta di sviluppo (Vite di default usa 5173)
+EXPOSE 5173
+
+# Comando per partire in dev
+CMD ["npm", "run", "dev"]

@@ -1,0 +1,23 @@
+FROM node:20-alpine 
+# Utilizzo l'immagine ufficiale di Node.js 
+
+WORKDIR /app
+# Imposto la directory di lavoro all'interno del container
+
+COPY package*.json ./
+# Copio i file package.json e package-lock.json
+
+RUN npm install
+# Installo le dipendenze
+
+COPY . .
+# Copio tutto il resto del codice 
+
+RUN npm run build
+# Compilo il progetto
+
+EXPOSE 4000
+# Espongo la porta 4000 per il server
+
+CMD ["npm", "run", "start"]
+
