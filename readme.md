@@ -429,3 +429,14 @@ ports:
 ```
 ---
 
+**Disclaimer**
+
+Questo progetto è stato sviluppato in modo rapido e funzionale, con l'obiettivo di soddisfare i requisiti della traccia.
+
+Sono consapevole che alcune best practice non sono state adottate, ad esempio il file .env che è stato incluso anche se non dovrebbe essere versionato su Git.
+
+**Possibili sviluppi futuri**
+
+Spostare le immagini dei prodotti su un servizio di storage cloud (es. S3 di AWS) per una gestione più scalabile.
+
+Migliorare la gestione delle variabili di ambiente.
