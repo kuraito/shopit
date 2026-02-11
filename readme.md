@@ -247,6 +247,7 @@ Crea un nuovo acquisto (richiede autenticazione).
 ```
 POST http://localhost:4000/dashboard/purchase
 Content-Type: application/json
+Authorization: <token>
 
 {
   "product_id": 1,
@@ -275,6 +276,7 @@ Recupera gli acquisti dell'utente autenticato.
 ```
 GET http://localhost:4000/dashboard/purchases
 Content-Type: application/json
+Authorization: <token>
 ```
 
 **Response (200 OK):**
