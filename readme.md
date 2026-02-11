@@ -54,7 +54,7 @@ npm run dev
 
 ---
 
-## Database - Schema e Relazioni
+## Database
 
 ### Tabelle
 
