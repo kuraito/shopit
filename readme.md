@@ -17,7 +17,7 @@ L’obiettivo del progetto è creare un’applicazione **full-stack containerizz
 ---
 ## Avvio rapido
 
-### Con Docker Compose (Consigliato)
+### Con Docker Compose
 
 ```bash
 # Dalla root del progetto
@@ -33,7 +33,6 @@ I servizi saranno disponibili a:
 - User: `shopit_user`
 - Password: `shopit_pass`
 - Database: `shopit_db`
-**Queste sono credenziali già inserite nel db di default eventualmente si può passare dalla registrazione e quindi avere nuove credenziali**
 
 ### Avvio Locale (senza Docker)
 
